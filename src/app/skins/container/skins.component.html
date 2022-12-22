@@ -1,0 +1,17 @@
+<span *ngIf="facade.isLoading$ | async; else skins">carregando</span>
+
+<ng-template #skins>
+  <ul
+    class="skins-list"
+    *ngIf="!(facade.error$ | async) as error; else errorMessage"
+  >
+    <li class="skin" *ngFor="let skin of facade.skins$ | async">
+      <img [src]="skin.image" [alt]="skin.description" />
+      {{ skin.name }}
+      {{ skin.rarity }}
+    </li>
+  </ul>
+  <ng-template #errorMessage>
+    {{ facade.error$ | async }}
+  </ng-template>
+</ng-template>

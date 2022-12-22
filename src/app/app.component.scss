@@ -1,0 +1,14 @@
+.cards-list {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem;
+  &__card {
+    height: 50vh;
+    display: grid;
+    place-items: center;
+    font-size: 2rem;
+    box-shadow: 0 0 30px #00000020;
+    border-radius: 2rem;
+  }
+}
