@@ -2,13 +2,16 @@
 
 <ng-template #skins>
   <ul
-    class="skins-list"
+    class="skins-list grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
     *ngIf="!(facade.error$ | async) as error; else errorMessage"
   >
-    <li class="skin" *ngFor="let skin of facade.skins$ | async">
+    <li
+      class="skin p-8 bg-slate-800 shadow-lg shadow-gray-900 rounded"
+      *ngFor="let skin of facade.skins$ | async"
+    >
       <img [src]="skin.image" [alt]="skin.description" />
-      {{ skin.name }}
-      {{ skin.rarity }}
+      <h2 class="skin__name text-2xl text-white">{{ skin.name }}</h2>
+      <p class="skin__rarity text-sm text-slate-400">{{ skin.rarity }}</p>
     </li>
   </ul>
   <ng-template #errorMessage>
