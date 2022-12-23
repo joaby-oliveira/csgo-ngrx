@@ -6,10 +6,10 @@
     *ngIf="!(facade.error$ | async) as error; else errorMessage"
   >
     <li
-      class="skin p-8 bg-slate-800 shadow-lg shadow-gray-900 rounded"
+      class="skin p-8 bg-slate-800 shadow-lg shadow-gray-900 rounded flex justify-center items-center flex-col gap-8"
       *ngFor="let skin of facade.skins$ | async"
     >
-      <img [src]="skin.image" [alt]="skin.description" />
+      <img [src]="skin.image" [alt]="skin.description" class="max-w-240" />
       <h2 class="skin__name text-2xl text-white">{{ skin.name }}</h2>
       <p class="skin__rarity text-sm text-slate-400">{{ skin.rarity }}</p>
     </li>
