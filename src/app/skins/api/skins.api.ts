@@ -10,6 +10,6 @@ export class SkinsApi {
   constructor(private httpClient: HttpClient) {}
 
   public getSkins(): Observable<Skin[]> {
-    return this.httpClient.get<Skin[]>(`${environment.apiUrl}sksains.json`);
+    return this.httpClient.get<Skin[]>(`${environment.apiUrl}skins.json`);
   }
 }
